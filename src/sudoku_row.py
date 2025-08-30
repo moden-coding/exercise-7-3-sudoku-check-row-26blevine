@@ -1,6 +1,16 @@
 # Write your solution here
 def row_correct(sudoku : list, row_index : int):
-    pass
+    
+    check = sudoku[row_index]
+    for val in range(1, 10):
+        seen_once = False
+        for num in check:
+            if num == val:
+                if not seen_once:
+                    seen_once = True
+                else:
+                    return False
+    return True
 
 
 
